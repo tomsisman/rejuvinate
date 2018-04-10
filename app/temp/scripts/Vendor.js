@@ -46,11 +46,11 @@
 
 	'use strict';
 
-	__webpack_require__(8);
-
 	__webpack_require__(9);
 
 	__webpack_require__(10);
+
+	__webpack_require__(11);
 
 /***/ }),
 /* 1 */,
@@ -60,7 +60,8 @@
 /* 5 */,
 /* 6 */,
 /* 7 */,
-/* 8 */
+/* 8 */,
+/* 9 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -69,7 +70,7 @@
 
 	/*!
 	 * modernizr v3.6.0
-	 * Build https://modernizr.com/download?-flexbox-svg-setclasses-dontmin
+	 * Build https://modernizr.com/download?-flexbox-input-svg-setclasses-dontmin
 	 *
 	 * Copyright (c)
 	 *  Faruk Ates
@@ -292,6 +293,95 @@
 	  ;
 
 	  /**
+	   * createElement is a convenience wrapper around document.createElement. Since we
+	   * use createElement all over the place, this allows for (slightly) smaller code
+	   * as well as abstracting away issues with creating elements in contexts other than
+	   * HTML documents (e.g. SVG documents).
+	   *
+	   * @access private
+	   * @function createElement
+	   * @returns {HTMLElement|SVGElement} An HTML or SVG element
+	   */
+
+	  function createElement() {
+	    if (typeof document.createElement !== 'function') {
+	      // This is the case in IE7, where the type of createElement is "object".
+	      // For this reason, we cannot call apply() as Object is not a Function.
+	      return document.createElement(arguments[0]);
+	    } else if (isSVG) {
+	      return document.createElementNS.call(document, 'http://www.w3.org/2000/svg', arguments[0]);
+	    } else {
+	      return document.createElement.apply(document, arguments);
+	    }
+	  }
+
+	  ;
+
+	  /**
+	   * since we have a fairly large number of input tests that don't mutate the input
+	   * we create a single element that can be shared with all of those tests for a
+	   * minor perf boost
+	   *
+	   * @access private
+	   * @returns {HTMLInputElement}
+	   */
+	  var inputElem = createElement('input');
+
+	  /*!
+	  {
+	    "name": "Input attributes",
+	    "property": "input",
+	    "tags": ["forms"],
+	    "authors": ["Mike Taylor"],
+	    "notes": [{
+	      "name": "WHATWG spec",
+	      "href": "https://html.spec.whatwg.org/multipage/forms.html#input-type-attr-summary"
+	    }],
+	    "knownBugs": ["Some blackberry devices report false positive for input.multiple"]
+	  }
+	  !*/
+	  /* DOC
+	  Detects support for HTML5 `<input>` element attributes and exposes Boolean subproperties with the results:
+	  
+	  ```javascript
+	  Modernizr.input.autocomplete
+	  Modernizr.input.autofocus
+	  Modernizr.input.list
+	  Modernizr.input.max
+	  Modernizr.input.min
+	  Modernizr.input.multiple
+	  Modernizr.input.pattern
+	  Modernizr.input.placeholder
+	  Modernizr.input.required
+	  Modernizr.input.step
+	  ```
+	  */
+
+	  // Run through HTML5's new input attributes to see if the UA understands any.
+	  // Mike Taylr has created a comprehensive resource for testing these attributes
+	  //   when applied to all input types:
+	  //   miketaylr.com/code/input-type-attr.html
+
+	  // Only input placeholder is tested while textarea's placeholder is not.
+	  // Currently Safari 4 and Opera 11 have support only for the input placeholder
+	  // Both tests are available in feature-detects/forms-placeholder.js
+
+	  var inputattrs = 'autocomplete autofocus list placeholder max min multiple pattern required step'.split(' ');
+	  var attrs = {};
+
+	  Modernizr.input = function (props) {
+	    for (var i = 0, len = props.length; i < len; i++) {
+	      attrs[props[i]] = !!(props[i] in inputElem);
+	    }
+	    if (attrs.list) {
+	      // safari false positive's on datalist: webk.it/74252
+	      // see also github.com/Modernizr/Modernizr/issues/146
+	      attrs.list = !!(createElement('datalist') && window.HTMLDataListElement);
+	    }
+	    return attrs;
+	  }(inputattrs);
+
+	  /**
 	   * If the browsers follow the spec, then they would expose vendor-specific styles as:
 	   *   elem.style.WebkitBorderRadius
 	   * instead of something like the following (which is technically incorrect):
@@ -322,31 +412,6 @@
 
 	  function contains(str, substr) {
 	    return !!~('' + str).indexOf(substr);
-	  }
-
-	  ;
-
-	  /**
-	   * createElement is a convenience wrapper around document.createElement. Since we
-	   * use createElement all over the place, this allows for (slightly) smaller code
-	   * as well as abstracting away issues with creating elements in contexts other than
-	   * HTML documents (e.g. SVG documents).
-	   *
-	   * @access private
-	   * @function createElement
-	   * @returns {HTMLElement|SVGElement} An HTML or SVG element
-	   */
-
-	  function createElement() {
-	    if (typeof document.createElement !== 'function') {
-	      // This is the case in IE7, where the type of createElement is "object".
-	      // For this reason, we cannot call apply() as Object is not a Function.
-	      return document.createElement(arguments[0]);
-	    } else if (isSVG) {
-	      return document.createElementNS.call(document, 'http://www.w3.org/2000/svg', arguments[0]);
-	    } else {
-	      return document.createElement.apply(document, arguments);
-	    }
 	  }
 
 	  ;
@@ -906,7 +971,7 @@
 	})(window, document);
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*! picturefill - v3.0.2 - 2016-02-12
@@ -2456,7 +2521,7 @@
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 	(function(window, factory) {

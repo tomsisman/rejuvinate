@@ -13,6 +13,10 @@
     }
   }
 
+  &--no-margin-bottom {
+    padding-bottom: 0;
+  }
+
   &--no-b-padding-until-large {
     padding-bottom: 0;
 
@@ -26,12 +30,12 @@
     color: #FFF;
   }
 
-  &--testimonials {
+  &--our-mission {
     background-color: #e0e6ef;
 
     @mixin atLarge {
       &.lazyloaded {
-        background: url('../../assets/images/testimonials-bg.jpg') top center no-repeat;
+        background: url('../../assets/images/our-mission-bg.jpg') top center no-repeat;
         background-size: cover;
       }
     }

@@ -1,0 +1,61 @@
+.form {
+    margin: 0 auto;
+
+    @mixin atSmall {
+        width: 450px;
+    }
+    @mixin atLarge {
+        width: 100%;
+    }
+
+    &__half {
+        @mixin atSmall {
+            width: 450px;
+        }
+    }
+}
+
+.input {
+    border-width: 0px;
+    &--mb {
+        margin-bottom: 14px;
+    }
+    &__btn {
+        cursor: pointer;
+    }
+    &__text {
+        border-width: 0px;
+        margin-top: 14px;
+        height: 30px;
+        padding: 10px;
+        &--half {
+            width: 100%;
+            @mixin atSmall {
+                width: 49.5%;
+                max-width: 450px;
+            }
+        }
+        &--full {
+            width: 100%;
+
+            @mixin atMediumLarge {
+                max-width: 450px;
+            }
+        }
+        &--textarea {
+            height: 120px;
+        }
+    }
+}
+
+.input-btn-div {
+    padding-top: 12px;
+    max-width: 450px;
+    text-align: left;
+    margin: 0 auto;
+    &--right-at-large {
+        @mixin atLarge {
+            text-align: right;
+        }
+    }
+}

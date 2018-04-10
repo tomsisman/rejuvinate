@@ -13,13 +13,17 @@
         position: fixed;
         background-color: rgba(255, 255, 255, 0);
 
+        .primary-nav a {
+            color: $mainBlue;
+            font-weight: 600;
+            transition: font-weight .4s ease-in-out;
+        }
+
         &--dark {
             background-color: rgba(255, 255, 255, 0.95);
-
-            .primary-nav a {
-                color: $mainBlue;
-            }
         }
+
+
     }
 
     &__btn-container {

@@ -3,18 +3,34 @@ Instead edit gulp/templates/sprite */
 
 
     .icon {
-        background-image: url('../../assets/images/sprites/sprite-019eefd8.svg');
+        background-image: url('../../assets/images/sprites/sprite-9457544c.svg');
     }
 
     .no-svg .icon {
-        background-image: url('../../assets/images/sprites/sprite-019eefd8.png');
+        background-image: url('../../assets/images/sprites/sprite-9457544c.png');
     }
+
+
+    .icon--battery {
+        width: 514px;
+        height: 514px;
+        background-position: 50% 0;
+    }
+
 
 
     .icon--comment {
         width: 66px;
         height: 66px;
-        background-position: 0 43.10344827586207%;
+        background-position: 43.766937669376695% 69.64769647696477%;
+    }
+
+
+
+    .icon--drop {
+        width: 514px;
+        height: 514px;
+        background-position: 0 50%;
     }
 
 
@@ -22,7 +38,15 @@ Instead edit gulp/templates/sprite */
     .icon--facebook {
         width: 23.23px;
         height: 44.01px;
-        background-position: 81.62563904283198% 79.75940285527936%;
+        background-position: 54.76668620001712% 68.62529122357292%;
+    }
+
+
+
+    .icon--fastforward {
+        width: 514px;
+        height: 514px;
+        background-position: 100% 0;
     }
 
 
@@ -30,7 +54,15 @@ Instead edit gulp/templates/sprite */
     .icon--fire {
         width: 58px;
         height: 66px;
-        background-position: 33.333333333333336% 0;
+        background-position: 43.26145552560647% 74.11924119241192%;
+    }
+
+
+
+    .icon--five-stars-outlines {
+        width: 514px;
+        height: 514px;
+        background-position: 0 100%;
     }
 
 
@@ -38,7 +70,7 @@ Instead edit gulp/templates/sprite */
     .icon--globe {
         width: 66px;
         height: 66px;
-        background-position: 65.26315789473684% 0;
+        background-position: 39.295392953929536% 69.64769647696477%;
     }
 
 
@@ -46,7 +78,15 @@ Instead edit gulp/templates/sprite */
     .icon--instagram {
         width: 44.01px;
         height: 44.01px;
-        background-position: 58.49332515684702% 47.82955286614972%;
+        background-position: 57.077150047730626% 68.62529122357292%;
+    }
+
+
+
+    .icon--lotus {
+        width: 514px;
+        height: 514px;
+        background-position: 0 0;
     }
 
 
@@ -54,7 +94,7 @@ Instead edit gulp/templates/sprite */
     .icon--mail {
         width: 66px;
         height: 50px;
-        background-position: 0 0;
+        background-position: 48.23848238482385% 68.90080428954424%;
     }
 
 
@@ -62,7 +102,7 @@ Instead edit gulp/templates/sprite */
     .icon--rain {
         width: 66px;
         height: 66px;
-        background-position: 100% 0;
+        background-position: 34.823848238482384% 74.11924119241192%;
     }
 
 
@@ -70,7 +110,23 @@ Instead edit gulp/templates/sprite */
     .icon--star {
         width: 66px;
         height: 66px;
-        background-position: 32.63157894736842% 100%;
+        background-position: 34.823848238482384% 69.64769647696477%;
+    }
+
+
+
+    .icon--stethoscope {
+        width: 514px;
+        height: 514px;
+        background-position: 100% 50%;
+    }
+
+
+
+    .icon--tick {
+        width: 514px;
+        height: 514px;
+        background-position: 50% 50%;
     }
 
 
@@ -78,7 +134,7 @@ Instead edit gulp/templates/sprite */
     .icon--twitter {
         width: 53.78px;
         height: 44.06px;
-        background-position: 93.95707645138958% 47.84688995215311%;
+        background-position: 52.27721707812017% 68.62758187911398%;
     }
 
 
@@ -86,7 +142,7 @@ Instead edit gulp/templates/sprite */
     .icon--wifi {
         width: 62px;
         height: 66px;
-        background-position: 0 100%;
+        background-position: 39.189189189189186% 74.11924119241192%;
     }
 
 
@@ -94,7 +150,7 @@ Instead edit gulp/templates/sprite */
     .icon--youtube {
         width: 36.75px;
         height: 44px;
-        background-position: 97.25427594070696% 79.7536231884058%;
+        background-position: 59.72562697226375% 68.62483311081442%;
     }
 
 

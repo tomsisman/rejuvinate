@@ -7,7 +7,7 @@ class StickyHeader {
     constructor() {
         this.lazyImages = $(".lazyload");
         this.siteHeader = $(".site-header");
-        this.headerTriggerElement = $(".large-hero__title");
+        this.headerTriggerElement = $(".large-hero");
         this.createHeaderWaypoint();
         this.pageSections = $(".page-section");
         this.createPageSectionWaypoints();
@@ -37,7 +37,8 @@ class StickyHeader {
                     that.siteHeader.removeClass("site-header--dark");
                 }
                 that.headerLinks.removeClass("is-current-link");
-            }
+            },
+            offset: "-5%" 
         });
     }
 

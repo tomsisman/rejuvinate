@@ -1,7 +1,7 @@
 .testimonial {
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, .6);
   padding: 0 18px 1px 18px;
-  margin-bottom: 98px;
+  margin-bottom: 49px;
 
   @mixin atLarge {
     margin-bottom: 0;
@@ -20,7 +20,8 @@
     margin: 0 auto -80px auto;
     position: relative;
     top: -80px;
-    border: 6px solid rgba(255, 255, 255, .8);
+    border: 6px solid #FFF;
+    background-color: #FFF;
   }
 
   &__title {
@@ -29,6 +30,11 @@
     font-size: 1.5rem;
     font-weight: 500;
     margin: 0;
+    padding-top: 120px;
+
+    @mixin atLarge {
+      padding-top: 170px;
+    }
   }
 
   &__subtitle {
@@ -37,5 +43,12 @@
     font-weight: 400;
     font-size: 0.9375rem;
     margin: .25rem 0 1rem 0;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.22,0.22);
   }
 }

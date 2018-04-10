@@ -2,6 +2,12 @@
 
   @mixin clearfix;
 
+  &--border-right {
+    @mixin atLarge {
+      border-right: 2px solid #fff;
+    }
+  }
+
   &--t-padding {
     padding-top: 80px;
   }
@@ -34,7 +40,7 @@
     margin-bottom: 1rem;
   }
 
-  @mixin atMedium {
+  @mixin atLarge {
 
     &__b-margin-until-medium {
       margin-bottom: 0;
